@@ -1,0 +1,21 @@
+{
+  "name": "test_js_ninja_learning",
+  "version": "1.0.0",
+  "description": "It's a test project for learing of Javascript Ninja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "Ninjia"
+  ],
+  "author": "Yilin Wang",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
