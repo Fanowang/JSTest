@@ -87,6 +87,39 @@ exports.gettask = function (req, res) {
     var emperor = new Emperor();
     assert(emperor.rules === false, "It's using puppet value!");
 
+
+    //using the apply and call methods
+    function juggle() {
+        var result = 0;
+        for (var n = 0; n < arguments.length; n++) {
+            result += arguments[n];
+
+        }
+        this.result = result;
+    }
+    var ninjaac1 = {};
+    var ninjaac2 = {};
+
+    juggle.apply(ninjaac1, [1, 2, 3, 4]);
+    juggle.call(ninjaac2, 5, 6, 7, 8);
+
+    assert(ninjaac1.result === 10, "juggled via apply!");
+    assert(ninjaac2.result === 26, "juggled via call!");
+
+    function forEach(list, callback) {
+        for (var n = 0; n < list.length; n++) {
+            callback.call(list[n], n);
+        }
+    }
+
+    var weapons = [{ type: 'shuriken' },
+    { type: 'katana' },
+    { type: 'nunchucks' }];
+
+    forEach(weapons, function (index) {
+        assert(this === weapons[index], "Got the expected value of " + weapons[index].type);
+    });
+
     res.json({ message: 'it is a test' + testfun(1, 3) });
 }
 
