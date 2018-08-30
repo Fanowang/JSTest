@@ -47,6 +47,45 @@ exports.gettask = function (req, res) {
 
     console.log("Key: " + keytest(23, 231, 23, 21, 32, "givemekey", 234, 234, 322));
 
+    function strictmodethis() {
+        return this;
+    }
+
+    console.log("value is " + (strictmodethis() === undefined));
+    function getMyContext() {
+        return this;
+    }
+
+    console.log("it's ? " + getMyContext());
+    var ninja1 = {
+        mycontext: getMyContext
+    };
+    console.log("it's ?" + (ninja1 === ninja1.mycontext()));
+
+    function ninjas() {
+        this.myContext = function () {
+            return this;
+        };
+
+    }
+
+    var ninjaa = new ninjas();
+    var ninjab = new ninjas();
+
+    assert(ninjaa.myContext() === ninjaa, "this is ninjiaa!");
+
+    assert(ninjab.myContext() === ninjab, "this is ninjiab!");
+
+
+    var puppet = {
+        rules: false
+    }
+    function Emperor() {
+        this.rules = true;
+        return puppet;
+    }
+    var emperor = new Emperor();
+    assert(emperor.rules === false, "It's using puppet value!");
 
     res.json({ message: 'it is a test' + testfun(1, 3) });
 }
@@ -67,4 +106,10 @@ function keytest(test1, test2) {
 
 function getsomevalue() {
     return "It's a return value test!";
+}
+
+function assert(val1, val2) {
+    if (val1) {
+        console.log(val2);
+    }
 }
