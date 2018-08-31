@@ -2,7 +2,7 @@
 
 exports.gettask = function (req, res) {
 
-    var testfun = function (n1, n2) { return n1 + n2; };
+   /*  var testfun = function (n1, n2) { return n1 + n2; };
     var t = function () { return 'it is another test'; };
     //console.log(t());
     t();
@@ -118,12 +118,12 @@ exports.gettask = function (req, res) {
 
     forEach(weapons, function (index) {
         assert(this === weapons[index], "Got the expected value of " + weapons[index].type);
-    });
+    }); */
 
     res.json({ message: 'it is a test' + testfun(1, 3) });
 }
 
-function keytest(test1, test2) {
+/* function keytest(test1, test2) {
     console.log("arguments 5: " + arguments[5]);
     var returnedvalue = getsomevalue();
     console.log(returnedvalue);
@@ -145,4 +145,4 @@ function assert(val1, val2) {
     if (val1) {
         console.log(val2);
     }
-}
+} */
