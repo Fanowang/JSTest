@@ -121,7 +121,7 @@ exports.gettask = function (req, res) {
     }); */
 
     res.json({ message: 'it is a test' });
-}
+};
 
 /* function keytest(test1, test2) {
     console.log("arguments 5: " + arguments[5]);

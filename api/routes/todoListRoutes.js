@@ -4,5 +4,5 @@ module.exports = function (app) {
 
     app.route('/tasks')
         .get(todoList.gettask);
-}
+};
 
