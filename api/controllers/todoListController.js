@@ -120,7 +120,7 @@ exports.gettask = function (req, res) {
         assert(this === weapons[index], "Got the expected value of " + weapons[index].type);
     }); */
 
-    res.json({ message: 'it is a test' + testfun(1, 3) });
+    res.json({ message: 'it is a test' });
 }
 
 /* function keytest(test1, test2) {
